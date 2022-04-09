@@ -12,11 +12,6 @@ on:
 jobs:
   molecule:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        scenario:
-          - default
-          - custom
     steps:
       - name: Checkout
         uses: actions/checkout@v3
