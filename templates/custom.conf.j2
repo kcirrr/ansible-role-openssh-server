@@ -1,0 +1,14 @@
+Protocol {{ openssh_server_protocol }}
+Port {{ openssh_server_port }}
+
+{% for hostkey in openssh_server_hostkeys %}
+HostKey /etc/ssh/ssh_host_{{ hostkey }}_key
+{% endfor %}
+
+KexAlgorithms {{ openssh_server_kexalgorithms }}
+Ciphers {{ openssh_server_ciphers }}
+MACs {{ openssh_server_macs }}
+
+PermitRootLogin {{ openssh_server_permitrootlogin }}
+UseDNS {{ openssh_server_usedns }}
+PasswordAuthentication {{ openssh_server_passwordauthentication }}
